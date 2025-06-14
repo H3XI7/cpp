@@ -1,6 +1,10 @@
 #pragma once
 #include "Kierownik.hpp"
 
+/*
+ * Klasa pochodna reprezentująca dyrektora firmy.
+ * Dziedziczy po Kierownik, dodatkowe pole: budżet.
+ */
 class Dyrektor : public Kierownik {
 private:
     double budzet;
@@ -15,5 +19,6 @@ public:
 
     void wypisz() const override;
     void specOperacja() const override;
+    // Metoda specyficzna dla dyrektora
     void podejmijDecyzje() const;
 };

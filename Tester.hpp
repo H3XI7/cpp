@@ -1,6 +1,10 @@
 #pragma once
 #include "Pracownik.hpp"
 
+/*
+ * Klasa pochodna reprezentująca testera oprogramowania.
+ * Dodatkowe pole: narzędzie testowe.
+ */
 class Tester : public Pracownik {
 private:
     std::string narzedzie;
@@ -15,5 +19,6 @@ public:
 
     void wypisz() const override;
     void specOperacja() const override;
+    // Metoda specyficzna dla testera
     void testuj() const;
 };

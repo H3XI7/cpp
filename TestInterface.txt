@@ -1,5 +1,5 @@
 Programista,Jan,Kowalski,C++,5
 Tester,Anna,Nowak,Postman
-Kierownik,Michal,Troczynski,7
-Dyrektor,Ewa,Wiśniewska,15,696969000
-Stazysta,Patryk,Turbakiewicz,Python,1,3
+Kierownik,Adam,Zieliński,7
+Dyrektor,Ewa,Wiśniewska,15,500000
+Stazysta,Mariusz,Rozłąka,Python,1,3

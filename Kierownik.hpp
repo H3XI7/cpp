@@ -1,6 +1,10 @@
 #pragma once
 #include "Pracownik.hpp"
 
+/*
+ * Klasa pochodna reprezentująca kierownika zespołu.
+ * Dodatkowe pole: liczba podwładnych.
+ */
 class Kierownik : public Pracownik {
 private:
     int liczbaPodwladnych;
@@ -15,5 +19,6 @@ public:
 
     void wypisz() const override;
     void specOperacja() const override;
+    // Metoda specyficzna dla kierownika
     void zarzadzaj() const;
 };

@@ -1,3 +1,6 @@
+# Makefile do projektu zaliczeniowego C++
+# Ułatwia kompilację i czyszczenie katalogu
+
 CXX=g++
 CXXFLAGS=-O2 -Wall -std=c++17
 OBJ=main.o Pracownik.o Programista.o Tester.o Kierownik.o Dyrektor.o Stazysta.o

@@ -10,11 +10,18 @@
 #include "Dyrektor.hpp"
 #include "Stazysta.hpp"
 
+/*
+ * Program główny:
+ * - Wczytuje dane pracowników z pliku tekstowego TestInterface.txt
+ * - Tworzy dynamicznie obiekty odpowiednich klas pochodnych (Programista, Tester, Kierownik, Dyrektor, Stazysta)
+ * - Wypisuje dane każdego pracownika i wywołuje metody specyficzne dla danej klasy (polimorfizm)
+ */
 int main() {
     std::vector<std::unique_ptr<Pracownik>> pracownicy;
 
     std::ifstream plik("TestInterface.txt");
     std::string linia;
+    // Wczytaj dane z pliku linia po linii
     while (getline(plik, linia)) {
         std::stringstream ss(linia);
         std::string typ, imie, nazwisko, jezyk, liczbaTxt, narzedzie, liczbaPodwTxt, budzetTxt, dlugoscTxt;
@@ -22,6 +29,7 @@ int main() {
         getline(ss, imie, ',');
         getline(ss, nazwisko, ',');
 
+        // Rozpoznaj typ pracownika i utwórz odpowiedni obiekt
         if (typ == "Programista") {
             getline(ss, jezyk, ',');
             getline(ss, liczbaTxt, ',');
@@ -50,10 +58,12 @@ int main() {
         }
     }
 
+    // Przetwarzaj wszystkich pracowników
     for (const auto& p : pracownicy) {
-        p->wypisz();
-        p->specOperacja();
-        // Specyficzne funkcje klas pochodnych
+        p->wypisz();          // polimorficzne wypisywanie
+        p->specOperacja();    // polimorficzna operacja
+
+        // Dynamiczne rzutowanie i wywołanie metod specyficznych dla klas
         if (auto pr = dynamic_cast<Programista*>(p.get())) pr->koduj();
         if (auto te = dynamic_cast<Tester*>(p.get())) te->testuj();
         if (auto ki = dynamic_cast<Kierownik*>(p.get())) ki->zarzadzaj();
